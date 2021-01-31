@@ -1,0 +1,65 @@
+library(imager)
+install
+install.packages("imager")
+library(imager)
+im <- load.image("hires_image.jpg")
+gc()
+library(RevoUtilsMath)
+timeAMatrix <- function(MatrixSize, NumOfCores) {     setMKLthreads(NumOfCores)     MatrixRows <- MatrixSize / 10     matrixOne <- matrix(rnorm(MatrixSize), nrow = MatrixRows)     matrixTwo <- matrix(rnorm(MatrixSize), nrow = MatrixRows)     #tic()     elapsedTime <- system.time(matrixOne * matrixTwo)     #elapsedTime <- toc()     return(data.frame(MatrixSize = as.integer(MatrixSize),                     cores = getMKLthreads(),                     Elapsed = as.double(elapsedTime["elapsed"], length = 10))) }
+savedDataPoints <- data.frame(MatrixSize = numeric(),                                cores = numeric(),                               Elapsed = numeric() )
+testTheseSizes <- seq(from = 1000000, to = 100000000, by=1000000)
+for (matrixSize in testTheseSizes) {     for (numbCores in 1:4) {         savedDF <- as.data.frame(timeAMatrix(matrixSize,numbCores))         savedDataPoints <- rbind(savedDataPoints, savedDF)         cat("Matrix Size = ",matrixSize,"Number of Cores = ", numbCores,"\n")     } }
+savedDataPoints$cores <- factor(savedDataPoints$cores)
+library(ggplot2)
+ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth(method = "lm", se = FALSE, aes(color = cores))
+savedDataPoints$cores <- factor(savedDataPoints$cores)
+library(ggplot2)
+ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth(method = "lm", se = FALSE, aes(color = cores))
+savedDataPoints$cores <- factor(savedDataPoints$cores)
+library(ggplot2)
+ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth(method = "lm", se = TRUE, aes(color = cores))
+ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth(method = "lm", se = FALSE, aes(color = cores) +        geom_point(aes(color = cores)                   ) )
+ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth(method = "lm", se = FALSE, aes(color = cores)) +        geom_point(aes(color = cores))
+                  )
+ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth(method = "lm", se = FALSE, aes(color = cores))
+ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth(method = "lm", se = TRUE, aes(color = cores))
+ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth(method = "lm", se = TRUE, aes(color = cores)) +        geom_point(aes(color = cores))
+                  )
+ggplot(data = savedDataPoints,
+       aes(x = MatrixSize, y = Elapsed)) +
+       geom_smooth(method = "lm", se = TRUE, aes(color = cores)) +
+       geom_point(aes(color = cores))
+library(RevoUtilsMath)
+timeAMatrix <- function(MatrixSize, NumOfCores) {     # this function enables cores, multiplies two matrices, then returns the performance     setMKLthreads(NumOfCores)     MatrixRows <- MatrixSize / 10     matrixOne <- matrix(rnorm(MatrixSize), nrow = MatrixRows)     matrixTwo <- matrix(rnorm(MatrixSize), nrow = MatrixRows)     elapsedTime <- system.time(matrixOne * matrixTwo)     return(data.frame(MatrixSize = as.integer(MatrixSize),                     cores = getMKLthreads(),                     Elapsed = as.double(elapsedTime["elapsed"], length = 10))) }
+library(RevoUtilsMath)
+timeAMatrix(100, 1)
+timeAMatrix(10000000, 4)
+savedDataPoints <- data.frame(MatrixSize = numeric(),                                cores = numeric(),                               Elapsed = numeric() )
+library(ggplot2)
+ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth(method = "lm", se = TRUE, aes(color = cores))
+ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth( se = TRUE, aes(color = cores))
+ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth(se = TRUE, aes(color = cores)) +        theme(legend.position = "right")
+performPlot <- ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth(se = TRUE, aes(color = cores)) +        theme(legend.position = "right")
+performPlot
+performPlot + geom_point(aes(color = cores))
+performPlot
+performPlot <- ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth(se = TRUE, aes(color = cores)) +        geom_text(data = savedDataPoints, aes(label = cores)) +        theme(legend.position = "right")
+performPlot
+performPlot <- ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth(se = TRUE, aes(color = cores)) +        geom_label_repel(data = savedDataPoints, aes(label = cores), nudge_x = 1) +        theme(legend.position = "right")
+performPlot
+performPlot <- ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth(se = TRUE, aes(color = cores)) +        geom_label_repel(data = savedDataPoints, aes(label = cores), nudge_x = 1)
+    ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth(se = TRUE, aes(color = cores)) +        geom_label_repel(data = savedDataPoints, aes(label = cores), nudge_x = 1)
+library(ggplot2)
+max(testTheseSizes)
+    ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth(se = TRUE, aes(color = cores)) +        geom_text(data = savedDataPoints[savedDataPoints$MatrixSize == max(testTheseSizes)],                  aes(label = cores),                  hjust = 0.7,                  vjust = 1)
+savedDataPoints[savedDataPoints$MatrixSize == max(test)]
+savedDataPoints[savedDataPoints$MatrixSize == max(testTheseSizes)]
+savedDataPoints[savedDataPoints$MatrixSize == max(savedDataPoints$MatrixSize)]
+    ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth(se = TRUE, aes(color = cores)) +        geom_text(data = savedDataPoints[savedDataPoints$MatrixSize == max(testTheseSizes),],                  aes(label = cores),                  hjust = 0.7,                  vjust = 1)
+    ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth(se = TRUE, aes(color = cores, linetype = cores)) +        theme(legend.position = "right")
+    ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth(se = FALSE, aes(color = cores, linetype = cores)) +        theme(legend.position = "right")
+performPlot <- ggplot(data = savedDataPoints,        aes(x = MatrixSize, y = Elapsed)) +        geom_smooth(se = FALSE, aes(color = cores, linetype = cores)) +        theme(legend.position = "right")
+performPlot
+performPlot + geom_point(aes(color = cores))
+performPlot
+performPlot

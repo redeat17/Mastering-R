@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{DA7A21FA-8162-4350-AD77-A8D1B671F3ED}") = "03_04 MRO comparison", "03_04 MRO comparison.rxproj", "{30AA1AF7-D199-4BBB-A3CA-21BBF37631AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30AA1AF7-D199-4BBB-A3CA-21BBF37631AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30AA1AF7-D199-4BBB-A3CA-21BBF37631AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30AA1AF7-D199-4BBB-A3CA-21BBF37631AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30AA1AF7-D199-4BBB-A3CA-21BBF37631AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E8012BF9-6709-44F9-8BFC-ECC81726861C}
+	EndGlobalSection
+EndGlobal

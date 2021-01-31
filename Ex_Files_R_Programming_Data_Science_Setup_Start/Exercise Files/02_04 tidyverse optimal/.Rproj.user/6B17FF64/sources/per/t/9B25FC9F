@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1513814713902.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "9B25FC9F",
+    "lastKnownWriteTime" : 8391086144590184448,
+    "last_content_update" : 1513814713902,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "849AD8CE",
+        "caption" : "shakespeare.results.two",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=shakespeare.results.two&cache_key=849AD8CE",
+        "displayedObservations" : 1,
+        "environment" : "",
+        "object" : "shakespeare.results.two",
+        "preview" : 0,
+        "totalObservations" : 1,
+        "variables" : 2
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

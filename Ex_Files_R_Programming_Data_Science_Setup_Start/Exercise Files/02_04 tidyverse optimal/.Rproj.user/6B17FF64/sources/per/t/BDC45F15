@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1513796330291.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2082905728",
+    "id" : "BDC45F15",
+    "lastKnownWriteTime" : 1513815678,
+    "last_content_update" : 1513815678,
+    "path" : "C:/Users/markn/OneDrive/R_DataSci - setup and start/Example Files/02_05 tidyverse optimal/shakespeare_tidyverse.R",
+    "project_path" : "shakespeare_tidyverse.R",
+    "properties" : {
+        "cursorPosition" : "42,0",
+        "scrollLine" : "31"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

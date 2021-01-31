@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1515455722585.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1080469791",
+    "id" : "AB4EA83E",
+    "lastKnownWriteTime" : 1515438143,
+    "last_content_update" : 1515438143,
+    "path" : "C:/Users/markn/OneDrive/R_DataSci - setup and start/Example Files/04_02 Install Bioconductor/04_02 Install Bioconductor.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "29,0",
+        "scrollLine" : "16"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
