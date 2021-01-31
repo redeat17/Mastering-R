@@ -1,0 +1,40 @@
+
+# setup -------------------------------------------------------------------
+# don't forget to start up the high velocity data simulator
+HighVelSimTxt <- "../HighVelocitySimulation.txt" # set this to the pathname of the simulation data
+
+# setwd to chapter 4
+
+library(lubridate)
+library(profvis)
+
+# use ifelse instead of if...else ---------------------------------------------------------
+
+ifElse_collectOneSecond <- function() {
+  oneSecData <- data.frame("V1" = NA,
+                           "V2" = NA,
+                           "V3" = NA,
+                           "V4" = NA)
+  
+  amountOfRunTime <- now() + seconds(1)
+  
+  while (amountOfRunTime > now()) {
+    newData <- read.table(HighVelSimTxt)
+    
+    newData$V4 <- ifelse(newData$V3 > 128, "higher", "lower")
+
+    oneSecData <- rbind(oneSecData, newData)
+  }
+  
+  # it would be better to place this outside of the loop
+  # newData$V4 <- ifelse(newData$V3 > 128,
+  #                      "higher",
+  #                      "lower")
+  
+  return(oneSecData)
+}
+
+ifelseData <- ifElse_collectOneSecond()
+
+profvis(ifElse_collectOneSecond())
+
